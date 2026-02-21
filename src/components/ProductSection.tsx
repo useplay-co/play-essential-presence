@@ -10,7 +10,7 @@ const colors = [
 ];
 
 const WHATSAPP_BASE =
-  "https://wa.me/5598991564356?text=Quero%20minha%20camisa%20Play%20por%20R$89,90";
+  "https://wa.me/5598991564356?text=Oi,%20quero%20comprar%20a%20Camiseta%20Play%20por%20R$89,90.%0A%0ATamanho:%20";
 
 const features = [
   "Algodão 81% premium",
@@ -25,7 +25,8 @@ const ProductSection = () => {
   const [selectedSize, setSelectedSize] = useState("M");
   const [selectedColor, setSelectedColor] = useState("preta");
 
-  const whatsappLink = `${WHATSAPP_BASE}%20-%20Cor:%20${selectedColor}%20-%20Tamanho:%20${selectedSize}`;
+  const colorName = colors.find((c) => c.value === selectedColor)?.name || selectedColor;
+  const whatsappLink = `${WHATSAPP_BASE}${selectedSize}%0ACor:%20${colorName}`;
 
   return (
     <section id="produto" className="py-24 md:py-32 bg-background">

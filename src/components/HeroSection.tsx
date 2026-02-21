@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 
 const WHATSAPP_LINK =
-  "https://wa.me/5598991564356?text=Oi,%20quero%20garantir%20minha%20camisa%20Play%20por%20R$89,90";
+  "https://wa.me/5598991564356?text=Oi,%20quero%20comprar%20a%20Camiseta%20Play%20por%20R$89,90.%0A%0ATamanho:%20(P/M/G/GG)%0ACor:%20(Preta/Branca)";
 
 const HeroSection = () => {
   return (

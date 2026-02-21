@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 
 const WHATSAPP_LINK =
-  "https://wa.me/5598991564356?text=Quero%20minha%20Play%20agora%20por%20R$89,90";
+  "https://wa.me/5598991564356?text=Oi,%20quero%20comprar%20a%20Camiseta%20Play%20por%20R$89,90.%0A%0ATamanho:%20(P/M/G/GG)%0ACor:%20(Preta/Branca)";
 
 const PersuasionBlock = () => {
   return (

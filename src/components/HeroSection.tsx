@@ -1,7 +1,5 @@
-import { useState } from "react";
 import heroImg from "@/assets/hero-play.jpg";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
 
 const WHATSAPP_LINK =
   "https://wa.me/5598991564356?text=Oi,%20quero%20comprar%20a%20Camiseta%20Play%20por%20R$89,90.%0A%0ATamanho:%20(P/M/G/GG)%0ACor:%20(Preta/Branca)";
@@ -17,32 +15,31 @@ const HeroSection = () => {
               Play — Essentials
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-foreground">
-              Menos excesso.
+              O essencial não
               <br />
-              Mais presença.
+              chama atenção.
+              <br />
+              Ele impõe respeito.
             </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-md leading-relaxed">
-              A camiseta essencial para homens que entendem o poder do básico bem
-              feito.
-            </p>
-            <p className="font-display text-2xl md:text-3xl font-bold text-foreground">
-              R$ 89,90
+              Camisetas básicas para homens que entendem que presença não precisa
+              de exagero.
             </p>
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="lg" className="h-14 px-10">
-                Comprar agora no WhatsApp
+                Garantir minha Play agora
               </Button>
             </a>
-            <div className="flex flex-wrap gap-6 pt-2 text-sm text-muted-foreground">
-              <span className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-foreground" /> Envio rápido
-              </span>
-              <span className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-foreground" /> Troca fácil
-              </span>
-              <span className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-foreground" /> Atendimento direto
-              </span>
+            <div className="space-y-1 pt-1">
+              <p className="text-sm text-muted-foreground">
+                <span className="line-through opacity-60">R$ 119,90</span>
+                <span className="font-display font-bold text-foreground ml-2">
+                  por R$ 89,90
+                </span>
+              </p>
+              <p className="text-xs text-muted-foreground/70 tracking-wide">
+                Estoque limitado.
+              </p>
             </div>
           </div>
           {/* Image */}

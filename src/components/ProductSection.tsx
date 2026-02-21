@@ -53,9 +53,14 @@ const ProductSection = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground font-display">
                 Play
               </h2>
-              <p className="font-display text-2xl font-bold text-foreground">
-                R$ 89,90
-              </p>
+              <div className="flex items-baseline gap-3">
+                <p className="text-lg text-muted-foreground/50 line-through">
+                  R$ 119,90
+                </p>
+                <p className="font-display text-2xl font-bold text-foreground">
+                  R$ 89,90
+                </p>
+              </div>
             </div>
 
             <p className="text-muted-foreground leading-relaxed">

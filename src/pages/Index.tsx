@@ -1,8 +1,9 @@
 import PlayNav from "@/components/PlayNav";
 import HeroSection from "@/components/HeroSection";
+import OfferSection from "@/components/OfferSection";
 import ProductSection from "@/components/ProductSection";
-import ConceptSection from "@/components/ConceptSection";
 import BenefitsSection from "@/components/BenefitsSection";
+import ConceptSection from "@/components/ConceptSection";
 import PersuasionBlock from "@/components/PersuasionBlock";
 import FAQSection from "@/components/FAQSection";
 import PlayFooter from "@/components/PlayFooter";
@@ -12,9 +13,10 @@ const Index = () => {
     <main className="min-h-screen">
       <PlayNav />
       <HeroSection />
+      <OfferSection />
       <ProductSection />
-      <ConceptSection />
       <BenefitsSection />
+      <ConceptSection />
       <PersuasionBlock />
       <FAQSection />
       <PlayFooter />

@@ -6,7 +6,7 @@ const WHATSAPP_LINK =
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-play-offwhite overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-play-offwhite overflow-hidden pt-[40px]">
       <div className="container mx-auto px-6 lg:px-16 py-20 lg:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text */}

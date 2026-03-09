@@ -1,6 +1,6 @@
 const PlayNav = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+    <nav className="fixed top-[40px] left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-6 lg:px-16 h-16 flex items-center justify-between">
         <a href="/" className="font-display text-xl font-bold tracking-tight text-foreground">
           Play

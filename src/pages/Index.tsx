@@ -1,24 +1,22 @@
+import UrgencyBar from "@/components/UrgencyBar";
 import PlayNav from "@/components/PlayNav";
 import HeroSection from "@/components/HeroSection";
-import OfferSection from "@/components/OfferSection";
+import PriceStrip from "@/components/PriceStrip";
 import ProductSection from "@/components/ProductSection";
-import BenefitsSection from "@/components/BenefitsSection";
 import ConceptSection from "@/components/ConceptSection";
-import PersuasionBlock from "@/components/PersuasionBlock";
-import FAQSection from "@/components/FAQSection";
+import BenefitsSection from "@/components/BenefitsSection";
 import PlayFooter from "@/components/PlayFooter";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <UrgencyBar />
       <PlayNav />
       <HeroSection />
-      <OfferSection />
+      <PriceStrip />
       <ProductSection />
-      <BenefitsSection />
       <ConceptSection />
-      <PersuasionBlock />
-      <FAQSection />
+      <BenefitsSection />
       <PlayFooter />
     </main>
   );

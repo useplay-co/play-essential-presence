@@ -22,7 +22,7 @@ const HeroSection = () => {
               Ele impõe respeito.
             </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-md leading-relaxed">
-              Camisetas básicas para homens que entendem que presença não precisa
+              Camiseta premium para homens que entendem que presença não precisa
               de exagero.
             </p>
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">

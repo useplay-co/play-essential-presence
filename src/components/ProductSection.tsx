@@ -1,12 +1,43 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import productBlack from "@/assets/product-black.jpg";
-import productWhite from "@/assets/product-white.jpg";
+import blackMain from "@/assets/black-main.png";
+import blackDetail1 from "@/assets/black-detail1.png";
+import blackDetail2 from "@/assets/black-detail2.jpeg";
+import whiteMain from "@/assets/white-main.png";
+import whiteDetail1 from "@/assets/white-detail1.png";
+import whiteDetail2 from "@/assets/white-detail2.png";
+import kitBoth from "@/assets/kit-both.jpeg";
 
 const sizes = ["P", "M", "G", "GG"];
-const colors = [
-  { name: "Preto (mais vendido 🔥)", value: "preta", hex: "hsl(0 0% 8%)", oldPrice: "R$ 119,90", price: "R$ 69,90" },
-  { name: "Branco", value: "branca", hex: "hsl(0 0% 96%)", oldPrice: "R$ 99,90", price: "R$ 59,90" },
+
+const colorOptions = [
+  {
+    name: "Preto (mais vendido 🔥)",
+    value: "preta",
+    hex: "hsl(0 0% 8%)",
+    oldPrice: "R$ 119,90",
+    price: "R$ 69,90",
+    images: [blackMain, blackDetail1, blackDetail2],
+    badge: null,
+  },
+  {
+    name: "Branco",
+    value: "branca",
+    hex: "hsl(0 0% 96%)",
+    oldPrice: "R$ 99,90",
+    price: "R$ 59,90",
+    images: [whiteMain, whiteDetail1, whiteDetail2],
+    badge: null,
+  },
+  {
+    name: "Kit (Branca + Preta)",
+    value: "kit",
+    hex: "linear-gradient(135deg, hsl(0 0% 8%) 50%, hsl(0 0% 96%) 50%)",
+    oldPrice: "R$ 219,80",
+    price: "R$ 129,90",
+    images: [kitBoth],
+    badge: "Melhor escolha",
+  },
 ];
 
 const WHATSAPP_BASE =
@@ -24,10 +55,24 @@ const features = [
 const ProductSection = () => {
   const [selectedSize, setSelectedSize] = useState("M");
   const [selectedColor, setSelectedColor] = useState("preta");
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
-  const currentColor = colors.find((c) => c.value === selectedColor);
-  const colorLabel = selectedColor === "preta" ? "Preta" : "Branca";
-  const whatsappLink = `${WHATSAPP_BASE}${selectedSize}%0ACor:%20${colorLabel}`;
+  const currentColor = colorOptions.find((c) => c.value === selectedColor);
+  const images = currentColor?.images ?? [];
+
+  const colorLabel =
+    selectedColor === "preta"
+      ? "Preta"
+      : selectedColor === "branca"
+      ? "Branca"
+      : "Kit%20(Branca%20%2B%20Preta)";
+
+  const whatsappLink = `${WHATSAPP_BASE}${selectedColor === "kit" ? "M" : selectedSize}%0ACor:%20${colorLabel}`;
+
+  const handleColorChange = (value: string) => {
+    setSelectedColor(value);
+    setActiveImageIndex(0);
+  };
 
   return (
     <section id="produto" className="py-24 md:py-32 bg-background">
@@ -37,12 +82,34 @@ const ProductSection = () => {
           <div className="space-y-4">
             <div className="aspect-square bg-play-offwhite rounded-sm overflow-hidden flex items-center justify-center">
               <img
-                src={selectedColor === "preta" ? productBlack : productWhite}
+                src={images[activeImageIndex] ?? images[0]}
                 alt={`Camiseta Play ${selectedColor}`}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
             </div>
+            {/* Thumbnails */}
+            {images.length > 1 && (
+              <div className="flex gap-3">
+                {images.map((img, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveImageIndex(i)}
+                    className={`w-20 h-20 rounded-sm overflow-hidden border-2 transition-all duration-200 ${
+                      activeImageIndex === i
+                        ? "border-foreground"
+                        : "border-border hover:border-muted-foreground"
+                    }`}
+                  >
+                    <img
+                      src={img}
+                      alt={`Detalhe ${i + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Details */}
@@ -61,6 +128,11 @@ const ProductSection = () => {
                 <p className="font-display text-2xl font-bold text-foreground">
                   {currentColor?.price}
                 </p>
+                {currentColor?.badge && (
+                  <span className="text-[10px] uppercase tracking-[0.15em] font-display font-bold bg-foreground text-background px-2 py-1 rounded-sm">
+                    {currentColor.badge}
+                  </span>
+                )}
               </div>
             </div>
 
@@ -75,44 +147,82 @@ const ProductSection = () => {
               <p className="text-xs uppercase tracking-[0.2em] font-display text-foreground">
                 Cor — {currentColor?.name}
               </p>
-              <div className="flex gap-3">
-                {colors.map((c) => (
-                  <button
-                    key={c.value}
-                    onClick={() => setSelectedColor(c.value)}
-                    className={`w-10 h-10 rounded-full border-2 transition-all duration-200 ${
-                      selectedColor === c.value
-                        ? "border-foreground scale-110"
-                        : "border-border hover:border-muted-foreground"
-                    }`}
-                    style={{ backgroundColor: c.hex }}
-                    aria-label={c.name}
-                  />
+              <div className="flex gap-3 items-center">
+                {colorOptions.map((c) => (
+                  <div key={c.value} className="relative">
+                    <button
+                      onClick={() => handleColorChange(c.value)}
+                      className={`w-10 h-10 rounded-full border-2 transition-all duration-200 ${
+                        selectedColor === c.value
+                          ? "border-foreground scale-110"
+                          : "border-border hover:border-muted-foreground"
+                      }`}
+                      style={
+                        c.value === "kit"
+                          ? { background: c.hex }
+                          : { backgroundColor: c.hex }
+                      }
+                      aria-label={c.name}
+                    />
+                    {c.badge && (
+                      <span className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-[9px] uppercase tracking-wider font-display text-muted-foreground">
+                        {c.badge}
+                      </span>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
 
             {/* Size */}
-            <div className="space-y-3">
-              <p className="text-xs uppercase tracking-[0.2em] font-display text-foreground">
-                Tamanho — {selectedSize}
-              </p>
-              <div className="flex gap-3">
-                {sizes.map((s) => (
-                  <button
-                    key={s}
-                    onClick={() => setSelectedSize(s)}
-                    className={`w-12 h-12 flex items-center justify-center text-sm font-display tracking-wide border transition-all duration-200 rounded-sm ${
-                      selectedSize === s
-                        ? "bg-primary text-primary-foreground border-primary"
-                        : "bg-background text-foreground border-border hover:border-foreground"
-                    }`}
-                  >
-                    {s}
-                  </button>
-                ))}
+            {selectedColor !== "kit" && (
+              <div className="space-y-3">
+                <p className="text-xs uppercase tracking-[0.2em] font-display text-foreground">
+                  Tamanho — {selectedSize}
+                </p>
+                <div className="flex gap-3">
+                  {sizes.map((s) => (
+                    <button
+                      key={s}
+                      onClick={() => setSelectedSize(s)}
+                      className={`w-12 h-12 flex items-center justify-center text-sm font-display tracking-wide border transition-all duration-200 rounded-sm ${
+                        selectedSize === s
+                          ? "bg-primary text-primary-foreground border-primary"
+                          : "bg-background text-foreground border-border hover:border-foreground"
+                      }`}
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
+
+            {selectedColor === "kit" && (
+              <div className="space-y-3">
+                <p className="text-xs uppercase tracking-[0.2em] font-display text-foreground">
+                  Tamanho — {selectedSize}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Selecione o tamanho (mesmo para ambas)
+                </p>
+                <div className="flex gap-3">
+                  {sizes.map((s) => (
+                    <button
+                      key={s}
+                      onClick={() => setSelectedSize(s)}
+                      className={`w-12 h-12 flex items-center justify-center text-sm font-display tracking-wide border transition-all duration-200 rounded-sm ${
+                        selectedSize === s
+                          ? "bg-primary text-primary-foreground border-primary"
+                          : "bg-background text-foreground border-border hover:border-foreground"
+                      }`}
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* CTA */}
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">

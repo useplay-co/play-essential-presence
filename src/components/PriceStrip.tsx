@@ -6,10 +6,10 @@ const PriceStrip = () => {
           R$ 119,90
         </p>
         <p className="text-2xl md:text-3xl font-bold text-foreground font-display">
-          R$ 89,90
+          R$ 69,90
         </p>
         <span className="bg-foreground text-background font-display text-xs uppercase tracking-[0.15em] px-3 py-1.5 rounded-sm font-bold">
-          -25% OFF
+          -42% OFF
         </span>
       </div>
     </section>

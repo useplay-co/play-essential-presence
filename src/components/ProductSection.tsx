@@ -34,9 +34,9 @@ const colorOptions = [
     value: "kit",
     hex: "linear-gradient(135deg, hsl(0 0% 8%) 50%, hsl(0 0% 96%) 50%)",
     oldPrice: "R$ 219,80",
-    price: "R$ 129,90",
+    price: "R$ 119,90",
     images: [kitBoth],
-    badge: "Melhor escolha",
+    badge: null,
   },
 ];
 

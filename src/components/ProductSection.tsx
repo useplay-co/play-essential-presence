@@ -5,28 +5,29 @@ import productWhite from "@/assets/product-white.jpg";
 
 const sizes = ["P", "M", "G", "GG"];
 const colors = [
-  { name: "Preta", value: "preta", hex: "hsl(0 0% 8%)" },
-  { name: "Branca", value: "branca", hex: "hsl(0 0% 96%)" },
+  { name: "Preto (mais vendido 🔥)", value: "preta", hex: "hsl(0 0% 8%)", oldPrice: "R$ 119,90", price: "R$ 69,90" },
+  { name: "Branco", value: "branca", hex: "hsl(0 0% 96%)", oldPrice: "R$ 99,90", price: "R$ 59,90" },
 ];
 
 const WHATSAPP_BASE =
-  "https://wa.me/5598991564356?text=Oi,%20quero%20comprar%20a%20Camiseta%20Play%20por%20R$89,90.%0A%0ATamanho:%20";
+  "https://wa.me/5598991564356?text=Oi,%20quero%20comprar%20a%20Camiseta%20Play.%0A%0ATamanho:%20";
 
 const features = [
-  "Algodão 81% premium",
-  "Modelagem masculina moderna",
+  "Algodão premium",
+  "Modelagem moderna",
   "Toque macio e estruturado",
   "Não fica transparente",
   "Alta durabilidade",
-  "Disponível em preta e branca",
+  "Essencial para qualquer ocasião",
 ];
 
 const ProductSection = () => {
   const [selectedSize, setSelectedSize] = useState("M");
   const [selectedColor, setSelectedColor] = useState("preta");
 
-  const colorName = colors.find((c) => c.value === selectedColor)?.name || selectedColor;
-  const whatsappLink = `${WHATSAPP_BASE}${selectedSize}%0ACor:%20${colorName}`;
+  const currentColor = colors.find((c) => c.value === selectedColor);
+  const colorLabel = selectedColor === "preta" ? "Preta" : "Branca";
+  const whatsappLink = `${WHATSAPP_BASE}${selectedSize}%0ACor:%20${colorLabel}`;
 
   return (
     <section id="produto" className="py-24 md:py-32 bg-background">
@@ -55,24 +56,24 @@ const ProductSection = () => {
               </h2>
               <div className="flex items-baseline gap-3">
                 <p className="text-lg text-muted-foreground/50 line-through">
-                  R$ 119,90
+                  {currentColor?.oldPrice}
                 </p>
                 <p className="font-display text-2xl font-bold text-foreground">
-                  R$ 89,90
+                  {currentColor?.price}
                 </p>
               </div>
             </div>
 
             <p className="text-muted-foreground leading-relaxed">
-              Desenvolvida com algodão 81% de alta qualidade, a camiseta Play
-              oferece toque macio, estrutura firme e caimento impecável. Um
-              essencial elevado ao mais alto padrão.
+              Desenvolvida com algodão premium, a camiseta Play oferece toque
+              macio, estrutura firme e caimento impecável. Um essencial elevado
+              ao mais alto padrão.
             </p>
 
             {/* Color */}
             <div className="space-y-3">
               <p className="text-xs uppercase tracking-[0.2em] font-display text-foreground">
-                Cor — {colors.find((c) => c.value === selectedColor)?.name}
+                Cor — {currentColor?.name}
               </p>
               <div className="flex gap-3">
                 {colors.map((c) => (

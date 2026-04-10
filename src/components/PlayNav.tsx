@@ -10,7 +10,7 @@ const PlayNav = () => {
             Produto
           </a>
           <a
-            href="https://wa.me/5598991564356?text=Oi,%20quero%20comprar%20a%20Camiseta%20Play%20por%20R$89,90.%0A%0ATamanho:%20(P/M/G/GG)%0ACor:%20(Preta/Branca)"
+            href="https://wa.me/5598991564356?text=Oi,%20quero%20comprar%20a%20Camiseta%20Play.%0A%0ATamanho:%20(P/M/G/GG)%0ACor:%20(Preta/Branca)"
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs uppercase tracking-[0.2em] bg-primary text-primary-foreground px-5 py-2.5 font-display hover:bg-primary/80 transition-colors rounded-sm"
@@ -19,7 +19,7 @@ const PlayNav = () => {
           </a>
         </div>
         <a
-          href="https://wa.me/5598991564356?text=Oi,%20quero%20comprar%20a%20Camiseta%20Play%20por%20R$89,90.%0A%0ATamanho:%20(P/M/G/GG)%0ACor:%20(Preta/Branca)"
+          href="https://wa.me/5598991564356?text=Oi,%20quero%20comprar%20a%20Camiseta%20Play.%0A%0ATamanho:%20(P/M/G/GG)%0ACor:%20(Preta/Branca)"
           target="_blank"
           rel="noopener noreferrer"
           className="md:hidden text-xs uppercase tracking-[0.2em] bg-primary text-primary-foreground px-4 py-2 font-display rounded-sm"

@@ -34,7 +34,7 @@ const HeroSection = () => {
               <p className="text-sm text-muted-foreground">
                 <span className="line-through opacity-60">R$ 119,90</span>
                 <span className="font-display font-bold text-foreground ml-2">
-                  por R$ 69,90
+                  por R$ 59,90
                 </span>
               </p>
               <p className="text-xs text-muted-foreground/70 tracking-wide">

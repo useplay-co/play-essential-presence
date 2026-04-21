@@ -16,7 +16,7 @@ const colorOptions = [
     value: "preta",
     hex: "hsl(0 0% 8%)",
     oldPrice: "R$ 119,90",
-    price: "R$ 69,90",
+    price: "R$ 59,90",
     images: [blackMain, blackDetail1, blackDetail2],
     badge: null,
   },

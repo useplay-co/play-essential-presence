@@ -2,7 +2,7 @@ import heroImg from "@/assets/hero-play.jpg";
 import { Button } from "@/components/ui/button";
 
 const WHATSAPP_LINK =
-  "https://wa.me/5598991564356?text=Oi,%20quero%20comprar%20a%20Camiseta%20Play%20por%20R$59,90.%0A%0ATamanho:%20(P/M/G/GG)%0ACor:%20(Preta/Branca)";
+  "https://wa.me/5598991564356?text=Oi,%20quero%20comprar%20a%20Camiseta%20Play%20por%20R$69,90.%0A%0ATamanho:%20(P/M/G/GG)%0ACor:%20(Preta/Branca)";
 
 const HeroSection = () => {
   return (
@@ -34,7 +34,7 @@ const HeroSection = () => {
               <p className="text-sm text-muted-foreground">
                 <span className="line-through opacity-60">R$ 119,90</span>
                 <span className="font-display font-bold text-foreground ml-2">
-                  por R$ 59,90
+                  por R$ 69,90
                 </span>
               </p>
               <p className="text-xs text-muted-foreground/70 tracking-wide">

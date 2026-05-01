@@ -23,7 +23,7 @@ const PersuasionBlock = () => {
               size="lg"
               className="h-14 px-10 font-display uppercase tracking-[0.15em] text-xs bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-none transition-all duration-300"
             >
-              Quero minha Play por R$ 59,90
+              Quero minha Play por R$ 69,90
             </Button>
           </a>
           <p className="text-xs text-primary-foreground/40 tracking-wide">

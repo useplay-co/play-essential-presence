@@ -10,7 +10,7 @@ const OfferSection = () => {
             R$ 119,90
           </p>
           <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground font-display">
-            HOJE POR R$ 89,90
+            HOJE POR R$ 69,90
           </p>
         </div>
         <div className="text-muted-foreground text-sm md:text-base leading-relaxed space-y-1 pt-4">

@@ -33,7 +33,7 @@ const casualProducts: Product[] = [
     images: [blackMain, blackDetail1, blackDetail2],
     oldPrice: "R$ 119,90",
     price: "R$ 69,90",
-    badges: ["MAIS VENDIDO"],
+    badges: ["BEST SELLER"],
     bullets: [
       "Algodão premium",
       "Modelagem moderna",

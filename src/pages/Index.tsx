@@ -2,6 +2,7 @@ import UrgencyBar from "@/components/UrgencyBar";
 import PlayNav from "@/components/PlayNav";
 import HeroSection from "@/components/HeroSection";
 import PriceStrip from "@/components/PriceStrip";
+import KitSection from "@/components/KitSection";
 import ProductSection from "@/components/ProductSection";
 import ConceptSection from "@/components/ConceptSection";
 import BenefitsSection from "@/components/BenefitsSection";
@@ -14,6 +15,7 @@ const Index = () => {
       <PlayNav />
       <HeroSection />
       <PriceStrip />
+      <KitSection />
       <ProductSection />
       <ConceptSection />
       <BenefitsSection />

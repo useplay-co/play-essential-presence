@@ -25,15 +25,33 @@ type Product = {
   cta: string;
 };
 
-const casualProducts: Product[] = [
+const products: Product[] = [
+  {
+    id: "navy",
+    name: "Camiseta Cotton Essencial — Azul Marinho",
+    colorLabel: "Azul%20Marinho",
+    images: [navyMain, navyDetail],
+    oldPrice: "R$ 99,90",
+    price: "R$ 69,90",
+    badges: ["LANÇAMENTO"],
+    bullets: [
+      "Cotton Premium 180g/m²",
+      "Composição com elastano — caimento impecável",
+      "Toque ultra macio",
+      "Gola careca 2cm",
+      "Estampa minimalista na manga esquerda",
+      "Pré-lavada",
+    ],
+    cta: "GARANTIR NO LANÇAMENTO",
+  },
   {
     id: "preta",
     name: "Camiseta Play — Preta",
     colorLabel: "Preta",
     images: [blackMain, blackDetail1, blackDetail2],
     oldPrice: "R$ 119,90",
-    price: "R$ 69,90",
-    badges: ["BEST SELLER"],
+    price: "R$ 59,90",
+    badges: [],
     bullets: [
       "Algodão premium",
       "Modelagem moderna",
@@ -63,25 +81,6 @@ const casualProducts: Product[] = [
     cta: "COMPRAR NO WHATSAPP",
   },
 ];
-
-const cottonProduct: Product = {
-  id: "navy",
-  name: "Camiseta Cotton Essencial — Azul Marinho",
-  colorLabel: "Azul%20Marinho",
-  images: [navyMain, navyDetail],
-  oldPrice: "R$ 79,90",
-  price: "R$ 59,90",
-  badges: ["DROP EXCLUSIVO", "PREÇO DE LANÇAMENTO"],
-  bullets: [
-    "Cotton Premium 180g/m²",
-    "Composição com elastano — caimento impecável",
-    "Toque ultra macio",
-    "Gola careca 2cm",
-    "Estampa minimalista na manga esquerda",
-    "Pré-lavada",
-  ],
-  cta: "GARANTIR NO LANÇAMENTO",
-};
 
 const ProductCard = ({ product }: { product: Product }) => {
   const [activeImage, setActiveImage] = useState(0);

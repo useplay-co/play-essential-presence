@@ -220,15 +220,9 @@ const ProductSection = () => {
     <section id="produto" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-6 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-          {casualProducts.map((p) => (
+          {products.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
-
-          <LineDivider label="LINHA COTTON" />
-
-          <div className="lg:col-start-2">
-            <ProductCard product={cottonProduct} />
-          </div>
         </div>
       </div>
     </section>

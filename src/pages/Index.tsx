@@ -15,8 +15,8 @@ const Index = () => {
       <PlayNav />
       <HeroSection />
       <PriceStrip />
-      <KitSection />
       <ProductSection />
+      <KitSection />
       <ConceptSection />
       <BenefitsSection />
       <PlayFooter />

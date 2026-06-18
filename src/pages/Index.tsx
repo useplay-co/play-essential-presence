@@ -1,6 +1,11 @@
+import { useState } from "react";
 import blackMain from "@/assets/black-main.png";
 import whiteMain from "@/assets/white-main.png";
 import navyMain from "@/assets/navy-main.png";
+import pimaSleeve from "@/assets/pima-sleeve.jpeg.asset.json";
+import pimaNeck from "@/assets/pima-neck.jpeg.asset.json";
+
+const featuredImages = [pimaSleeve.url, pimaNeck.url, blackMain];
 
 const WA = "https://wa.me/5598991564356?text=";
 
@@ -17,7 +22,7 @@ const featured: Product = {
   description:
     "Algodão Pima premium. Caimento estruturado, toque seco e durabilidade superior. A peça definitiva do guarda-roupa essencial.",
   price: "R$ 109,90",
-  image: blackMain,
+  image: featuredImages[0],
   color: "Preta",
 };
 
@@ -44,6 +49,7 @@ const buyLink = (p: Product) =>
   )}.%0A%0ATamanho:%20(P/M/G/GG)%0ACor:%20${p.color}`;
 
 const Index = () => {
+  const [featuredIdx, setFeaturedIdx] = useState(0);
   return (
     <main className="min-h-screen bg-white text-[#0a0a0a] font-body">
       {/* Header */}
@@ -69,13 +75,30 @@ const Index = () => {
       {/* Featured product */}
       <section className="px-6 md:px-16 pb-32 md:pb-48">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
-          <div className="md:col-span-8">
+          <div className="md:col-span-8 space-y-4">
             <img
-              src={featured.image}
+              key={featuredIdx}
+              src={featuredImages[featuredIdx]}
               alt={featured.name}
               className="w-full h-auto object-cover"
               loading="eager"
             />
+            <div className="flex gap-3">
+              {featuredImages.map((img, i) => (
+                <button
+                  key={i}
+                  onClick={() => setFeaturedIdx(i)}
+                  className="w-20 h-20 overflow-hidden border transition-opacity"
+                  style={{
+                    borderColor: featuredIdx === i ? "#0a0a0a" : "#0a0a0a20",
+                    opacity: featuredIdx === i ? 1 : 0.6,
+                  }}
+                  aria-label={`Imagem ${i + 1}`}
+                >
+                  <img src={img} alt="" className="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
           </div>
           <div className="md:col-span-4 space-y-8">
             <p className="text-[10px] md:text-xs uppercase tracking-[0.35em] font-light">

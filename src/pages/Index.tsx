@@ -22,7 +22,7 @@ const featured: Product = {
   description:
     "Algodão Pima premium. Caimento estruturado, toque seco e durabilidade superior. A peça definitiva do guarda-roupa essencial.",
   price: "R$ 109,90",
-  image: blackMain,
+  image: featuredImages[0],
   color: "Preta",
 };
 

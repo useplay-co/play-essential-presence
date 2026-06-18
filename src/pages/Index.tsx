@@ -49,6 +49,7 @@ const buyLink = (p: Product) =>
   )}.%0A%0ATamanho:%20(P/M/G/GG)%0ACor:%20${p.color}`;
 
 const Index = () => {
+  const [featuredIdx, setFeaturedIdx] = useState(0);
   return (
     <main className="min-h-screen bg-white text-[#0a0a0a] font-body">
       {/* Header */}

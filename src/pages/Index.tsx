@@ -1,6 +1,11 @@
+import { useState } from "react";
 import blackMain from "@/assets/black-main.png";
 import whiteMain from "@/assets/white-main.png";
 import navyMain from "@/assets/navy-main.png";
+import pimaSleeve from "@/assets/pima-sleeve.jpeg.asset.json";
+import pimaNeck from "@/assets/pima-neck.jpeg.asset.json";
+
+const featuredImages = [pimaSleeve.url, pimaNeck.url, blackMain];
 
 const WA = "https://wa.me/5598991564356?text=";
 

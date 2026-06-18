@@ -5,7 +5,7 @@ import navyMain from "@/assets/navy-main.png";
 import pimaSleeve from "@/assets/pima-sleeve.jpeg.asset.json";
 import pimaNeck from "@/assets/pima-neck.jpeg.asset.json";
 
-const featuredImages = [pimaSleeve.url, pimaNeck.url, blackMain];
+const featuredImages = [blackMain, pimaSleeve.url, pimaNeck.url];
 
 const WA = "https://wa.me/5598991564356?text=";
 
